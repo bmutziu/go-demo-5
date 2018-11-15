@@ -45,8 +45,8 @@ spec:
       memory: 500Mi
       cpu: 0.5
     min:
-      memory: 10Mi
-      cpu: 0.05
+      memory: 5Mi
+      cpu: 0.005
     type: Container
 
 ---
