@@ -21,18 +21,18 @@ spec:
     spec:
       containers:
       - name: api
-        image: "vfarcic/go-demo-5:{{ .Values.image.tag }}"
+        image: "bmutziu/go-demo-5:{{ .Values.image.tag }}"
         env:
         - name: DB
           value: {{ template "helm.fullname" . }}-db
         readinessProbe:
           httpGet:
-            path: /demo/hello?health=true
+            path: /demo/hello
             port: 8080
           periodSeconds: 1
         livenessProbe:
           httpGet:
-            path: /demo/hello?health=true
+            path: /demo/hello
             port: 8080
         resources:
 {{ toYaml .Values.resources | indent 10 }}
